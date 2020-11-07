@@ -1,19 +1,27 @@
+" Use the space key as our leader. Put this near the top of your vimrc
+let mapleader = "\<Space>"
+" Split edit your vimrc. Type space, v, r in sequence to trigger
+nmap <leader>vr :sp $MYVIMRC<cr>
+" Source (reload) your vimrc. Type space, s, o in sequence to trigger
+nmap <leader>so :source $MYVIMRC<cr>
 
 
-
-
+imap jk <esc>
+imap kj <esc>
+" imap <C-s> <esc>:w<cr>
 
 
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
-" disable vi compatibility (emulation of old bugs)
-set nocompatible
-" use indentation of previous line
-set autoindent
-" use intelligent indentation for C
-set smartindent
+set fileencodings=utf-8,gb18030
+set autoindent  " use indentation of previous line
+set smartindent  " use intelligent indentation for C
+set scrolloff=10  " keep at least 4 lines below cursor
+set comments=sl:/*,mb:\ *,elx:\ */  " intelligent comments
+set number  " turn line numbers on
+set showmatch  " highlight matching braces
 " configure tabwidth and insert spaces instead of tabs
 set tabstop=4        " tab width is 4 spaces
 set shiftwidth=4     " indent also with 4 spaces
@@ -24,20 +32,31 @@ set textwidth=120
 set t_Co=256
 syntax on
 " colorscheme wombat256
-" turn line numbers on
-set number
-" highlight matching braces
-set showmatch
-" intelligent comments
-set comments=sl:/*,mb:\ *,elx:\ */
-
-
-
 " enable Omni completion
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
+" set omnifunc=syntaxcomplete#Complete
 
 
+
+" Minamal configuration for vim8
+set nocompatible  " Don't maintain compatibility with vi
+filetype plugin  indent on
+
+
+
+
+"keep cursor in the middle all the time :)
+" nnoremap k kzz
+" nnoremap j jzz
+" nnoremap p pzz
+" nnoremap P Pzz
+" nnoremap G Gzz
+" nnoremap x xzz
+" inoremap <ESC> <ESC>zz
+" nnoremap <ENTER> <ENTER>zz
+" inoremap <ENTER> <ENTER><ESC>zzi
+" nnoremap o o<ESC>zza
+" nnoremap O O<ESC>zza
+" nnoremap a a<ESC>zza
 
 
 
