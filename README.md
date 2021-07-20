@@ -17,9 +17,8 @@ ln -s dotfiles/vim .vim
 ```
 
 #### 3. Install plugins
->> ##### 3.1 run vim
-
->> ##### 3.2 press : in vim and then input commands below
+> ##### 3.1 run vim
+> ##### 3.2 press : in vim and then input commands below
 >> :PlugInstall
 
 
