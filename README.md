@@ -17,9 +17,14 @@ ln -s dotfiles/vim .vim
 ```
 
 #### 3. Install plugins
-> ##### 3.1 run vim
-> ##### 3.2 press : in vim and then input commands below
+* run vim first
+* press : in vim and then input commands below
 >> :PlugInstall
+
+
+#### 4. tips
+* <space>tg: open taglist
+* <space>n: open NerdTree
 
 
 ### reference materials
