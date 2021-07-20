@@ -17,10 +17,9 @@ ln -s dotfiles/vim .vim
 ```
 
 #### 3. Install plugins
-3.1 run vim
+##### 3.1 run vim
 
-3.2 press : in vim and then input commands below
-
+##### 3.2 press : in vim and then input commands below
 :PlugInstall
 
 
@@ -31,9 +30,5 @@ ln -s dotfiles/vim .vim
         :so %
         :so $MYVIMRC
             :so is short for :source
-
-#### 3. add plugins
-          Because ~/.vim is one of the default runtimepath of vim, we can just put plugins/scripts under ~/.vim/plugin
-
 
 
