@@ -24,8 +24,6 @@ ln -s dotfiles/vim .vim
 :PlugInstall
 
 
-#### 2. sudo apt install ctags cscope
-
 ### reference materials
 #### 1. one of best tutorials: https://thoughtbot.com/upcase/videos/onramp-to-vim-surviving-your-first-week
 
