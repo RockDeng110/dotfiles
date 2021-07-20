@@ -35,6 +35,25 @@ syntax on
 " enable Omni completion
 " set omnifunc=syntaxcomplete#Complete
 
+" two lines below is for enable smartcase
+set ignorecase
+set smartcase
+
+
+" 80 characters line, as kernel coding requires that you should keep your lines length at 80 characters max
+set colorcolumn=81
+"execute "set colorcolumn=" . join(range(81,335), ',')
+highlight ColorColumn ctermbg=Black ctermfg=DarkRed
+
+" Highlight trailing spaces
+" http://vim.wikia.com/wiki/Highlight_unwanted_spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
 
 
 " Minamal configuration for vim8
@@ -57,6 +76,10 @@ filetype plugin  indent on
 " nnoremap o o<ESC>zza
 " nnoremap O O<ESC>zza
 " nnoremap a a<ESC>zza
+nmap <leader>h <C-w>h
+nmap <leader>j <C-w>j
+nmap <leader>k <C-w>k
+nmap <leader>l <C-w>l
 
 
 
@@ -70,9 +93,9 @@ let g:DoxygenToolkit_returnTag="@Returns   "
 " let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
 let g:DoxygenToolkit_authorName="Rock Deng"
 let g:DoxygenToolkit_licenseTag="My own license"
- 
+
 map <F6> :Dox<CR>
- 
+
 
 
 
@@ -86,13 +109,60 @@ map <F6> :Dox<CR>
 
 
 " Open and close all the three plugins on the same time
-nmap <F8> :TrinityToggleAll<CR>
+" nmap <F8> :TrinityToggleAll<CR>
 " Open and close the Source Explorer separately
-nmap <F9>  :TrinityToggleSourceExplorer<CR>
+" nmap <F9>  :TrinityToggleSourceExplorer<CR>
 " Open and close the Taglist separately
-nmap <F10> :TrinityToggleTagList<CR>
+" nmap <F10> :TrinityToggleTagList<CR>
 " Open and close the NERD Tree separately
-nmap <F11> :TrinityToggleNERDTree<CR>
+" nmap <F11> :TrinityToggleNERDTree<CR>
 
 
+
+
+" Plugins will be downloaded under the specified directory.
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+" Declare the list of plugins.
+Plug 'dr-kino/cscope-maps'
+Plug 'tpope/vim-sensible'
+Plug 'junegunn/seoul256.vim'
+Plug 'vim-scripts/ctags.vim'
+Plug 'majutsushi/tagbar'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'preservim/nerdtree'
+Plug 'kien/ctrlp.vim'
+" plug 'vim-syntastic/syntastic'
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+
+" airline
+let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
+let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
+
+" NerdTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+nmap <leader>tg :TagbarToggle<CR>
+
+set nocscopeverbose
+let g:airline_theme='simple'
+
+" ctrlp
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+\}
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
