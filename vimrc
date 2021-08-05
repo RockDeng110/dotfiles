@@ -41,18 +41,18 @@ set smartcase
 
 
 " 80 characters line, as kernel coding requires that you should keep your lines length at 80 characters max
-set colorcolumn=81
+" set colorcolumn=81
 "execute "set colorcolumn=" . join(range(81,335), ',')
-highlight ColorColumn ctermbg=Black ctermfg=DarkRed
+" highlight ColorColumn ctermbg=Black ctermfg=DarkRed
 
 " Highlight trailing spaces
 " http://vim.wikia.com/wiki/Highlight_unwanted_spaces
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+" highlight ExtraWhitespace ctermbg=red guibg=red
+" match ExtraWhitespace /\s\+$/
+" autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+" autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+" autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+" autocmd BufWinLeave * call clearmatches()
 
 
 
@@ -88,7 +88,7 @@ nmap <leader>l <C-w>l
 " Doxygen configurations
 let g:DoxygenToolkit_briefTag_pre="@Breif "
 let g:DoxygenToolkit_paramTag_pre="@Param "
-let g:DoxygenToolkit_returnTag="@Returns   "
+let g:DoxygenToolkit_returnTag="@Returns"
 " let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
 " let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
 let g:DoxygenToolkit_authorName="Rock Deng"
@@ -142,6 +142,19 @@ let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>0 <Plug>AirlineSelectTab0
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTab
 
 " NerdTree
 nnoremap <leader>n :NERDTreeFocus<CR>
