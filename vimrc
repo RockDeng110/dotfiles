@@ -123,16 +123,16 @@ map <F6> :Dox<CR>
 " Plugins will be downloaded under the specified directory.
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " Declare the list of plugins.
-Plug 'dr-kino/cscope-maps'
+Plug 'dr-kino/cscope-maps'                   " for cscope 
 Plug 'tpope/vim-sensible'
-Plug 'junegunn/seoul256.vim'
-Plug 'vim-scripts/ctags.vim'
-Plug 'majutsushi/tagbar'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'preservim/nerdtree'
-Plug 'kien/ctrlp.vim'
-Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'junegunn/seoul256.vim'                 " seoul256.vim is a low-contrast Vim color scheme based on Seoul Colors.
+Plug 'vim-scripts/ctags.vim'                 " for ctags
+Plug 'majutsushi/tagbar'                     " The tagbar which shows all the tags in your current file 
+Plug 'bling/vim-airline'                     " There will be a nice statusline at the bottom of each vim window.
+Plug 'vim-airline/vim-airline-themes'        " For set up airline themes
+Plug 'preservim/nerdtree'                    " Directory tree
+Plug 'ctrlpvim/ctrlp.vim'                        " don't remember it
+Plug 'vim-scripts/DoxygenToolkit.vim'        " For doxygen style comment
 " plug 'vim-syntastic/syntastic'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
