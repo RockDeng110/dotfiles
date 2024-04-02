@@ -132,6 +132,7 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'preservim/nerdtree'
 Plug 'kien/ctrlp.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim'
 " plug 'vim-syntastic/syntastic'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
