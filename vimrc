@@ -128,7 +128,7 @@ Plug 'tpope/vim-sensible'
 Plug 'junegunn/seoul256.vim'                 " seoul256.vim is a low-contrast Vim color scheme based on Seoul Colors.
 Plug 'vim-scripts/ctags.vim'                 " for ctags
 Plug 'majutsushi/tagbar'                     " The tagbar which shows all the tags in your current file 
-Plug 'bling/vim-airline'                     " There will be a nice statusline at the bottom of each vim window.
+Plug 'vim-airline/vim-airline'               " There will be a nice statusline at the bottom of each vim window.
 Plug 'vim-airline/vim-airline-themes'        " For set up airline themes
 Plug 'preservim/nerdtree'                    " Directory tree
 Plug 'ctrlpvim/ctrlp.vim'                        " don't remember it
@@ -144,6 +144,32 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+
+let g:airline#extensions#tabline#formatter = 'default'  " f/p/file-name.js
+" let g:airline#extensions#tabline#formatter = 'jsformatter' " path-to/f
+" let g:airline#extensions#tabline#formatter = 'unique_tail' " file-name.js
+" let g:airline#extensions#tabline#formatter = 'unique_tail_improved' " f/p/file-name.js
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.dirty='⚡'
+
+" the separator used on the left side
+" let g:airline_left_sep=''
+" the separator used on the right side
+" let g:airline_right_sep=''
+
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
