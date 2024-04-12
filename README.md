@@ -3,6 +3,13 @@ my vim configurations
 
 ### How to implement this rope
 
+#### 0. Prerequisites
+```sh
+sudo apt install vim
+sudo apt install cscope
+sudo apt install ctags
+```
+
 #### 1. git clone this repo in your local machine
 ```sh
 cd
