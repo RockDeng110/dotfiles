@@ -83,6 +83,14 @@ nmap <leader>l <C-w>l
 
 
 
+" copy from and paste to the system clipboard
+" Refer to https://superuser.com/questions/1559544/how-to-copy-from-vim-to-clipboard-on-ubuntu-20-04
+" If the clipboard is not active in vim, install vim-gtk3 or gvim.
+noremap <leader>y "+y
+noremap <leader>p "+p
+
+
+
 
 
 " Doxygen configurations
